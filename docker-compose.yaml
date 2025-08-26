@@ -31,17 +31,37 @@ services:
     depends_on:
       - backend
 
-nginx:
-    image: nginx:alpine
-    container_name: formatrack_nginx
+    docs:
+      platform: linux/amd64
+      image: luis145/docutecnica:1.0.1
+      container_name: formatrack_docs
+      env_file:
+      - ./Docs/.env
+      ports:
+        - "4322:4322" 
+      restart: always
+
+  manual:
+    platform: linux/amd64
+    image: luis145/manualusuario:1.0
+    container_name: formatrack_manual
+    env_file:
+      - ./Manual/.env
     ports:
-      - "80:80"
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./frontend_build:/usr/share/nginx/html:ro
-    depends_on:
-      - frontend
-      - backend
+      - "4323:4323"
+    restart: always
+
+nginx:
+  image: nginx:alpine
+  container_name: formatrack_nginx
+  ports:
+    - "80:80"
+  volumes:
+    - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    - ./frontend_build:/usr/share/nginx/html:ro
+  depends_on:
+    - frontend
+    - backend
 
 volumes:
   formatrack:
