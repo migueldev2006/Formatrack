@@ -1,0 +1,22 @@
+Primero para desplegar debe tener en cuenta la ip de su maquina virtual en este caso esta
+configurada como 192.168.1.203, en caso de ser diferente debera cambiarla en los .env necesarios
+
+Para correr el contenedor ejecute
+
+docker compose up -d
+
+Ruta del front es 
+
+http://192.168.1.203/
+
+Back
+
+http://192.168.1.203/backend/
+
+Documentacion tecnica 
+
+http://192.168.1.203/doc-tecnica/
+
+Manual de usuario
+
+http://192.168.1.203/doc-manual/

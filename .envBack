@@ -1,0 +1,13 @@
+DB_PASSWORD=kesito
+DB_NAME=formatrack
+DB_HOST=db
+DB_PORT=5432
+DB_USERNAME=postgres
+
+BASE_URL=http://192.168.1.203
+
+SERVICE_MAIL=gmail
+MAIL_USER=formatrackbot@gmail.com
+MAIL_PASSWORD=gdjz nmob ipqg yqzs
+
+SECRET=kesito
